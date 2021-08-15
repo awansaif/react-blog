@@ -1,4 +1,3 @@
-import './App.css';
 import Home from './Pages/Home';
 import Footer from './partials/Footer';
 import Navbar from './partials/Navbar';
@@ -19,7 +18,7 @@ function App() {
         <Navbar />
 
         {/* sidebar */}
-        <Sidebar />
+        {/* <Sidebar /> */}
 
         {/* content */}
          <Switch>
