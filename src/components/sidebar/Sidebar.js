@@ -1,35 +1,7 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import Category from "./Category";
+import Subscribe from "./Subscribe";
+
 const Sidebar = () => {
-  const [email, setemail] = useState("");
-  const [error, setError] = useState("");
-  const [message, setMessage] = useState("");
-  const [categories, setcategory] = useState("");
-  // handle subscribe email
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    fetch("http://127.0.0.1:8000/api/subscribe", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email: email }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.errors) {
-          setError(data.message);
-        } else {
-          setMessage(data.message);
-        }
-      });
-  };
-  useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/categories")
-      .then((res) => res.json())
-      .then((data) => setcategory(data.data));
-  }, []);
   return (
     <div className="col-lg-4">
       <div className="sidebar">
@@ -114,22 +86,7 @@ const Sidebar = () => {
           </ul>
         </div>
         {/* <!--widget-social-links end--> */}
-        <div className="widget subscribe-wd">
-          <h3 className="widget-title">Get Fresh News</h3>
-          {message && message}
-          <form onSubmit={handleSubmit}>
-            <input
-              type="email"
-              onChange={(e) => setemail(e.target.value)}
-              placeholder="Enter your email adress"
-            />
-            {error && error}
-            <button type="submit">
-              <i className="far fa-paper-plane"></i>
-            </button>
-          </form>
-          <img src="images/penc-img.png" alt="" className="penc-img" />
-        </div>
+        <Subscribe />
         {/* <!--subscribe-wd end--> */}
         <div className="widget widget-recent-post">
           <h3 className="widget-title">Recent Post</h3>
@@ -150,27 +107,13 @@ const Sidebar = () => {
           {/* <!--carousel end--> */}
         </div>
         {/* <!--widget-recent-post end--> */}
-        <div className="widget widget-adver">
+        {/* <div className="widget widget-adver">
           <a href="/" title="">
             <img src="images/resources/ad-img.jpg" alt="" />
           </a>
-        </div>
-        {/* <!--widget-adver end--> */}
-        <div className="widget widget-catgs">
-          <h3 className="widget-title">Categories</h3>
-          <ul className="catgs-links">
-            {categories &&
-              categories.map((category) => (
-                <li>
-                  <Link to={category.slug} title={category.title}>
-                    {category.title}
-                  </Link>
-                </li>
-              ))}
-          </ul>
-          {/* <!--catgs-links end--> */}
-        </div>
-        {/* <!--widget-catgs end--> */}
+        </div> */}
+
+        <Category />
         <div className="widget widget-fb">
           <div className="page-img">
             <img src="images/resources/page-img.jpg" alt="" />

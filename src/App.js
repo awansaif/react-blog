@@ -1,58 +1,33 @@
-import Home from './Pages/Home';
-import Footer from './partials/Footer';
-import Navbar from './partials/Navbar';
-import Sidebar from './partials/sidebar';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
-import Contact from './Pages/Contact';
-import About from './Pages/About';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/home/Home";
+import About from "./pages/about/About";
+import Contact from "./pages/Contact";
+import Blog from "./pages/SingleBlog";
+import Category from "./pages/SingleCategory";
+import Search from "./components/Search";
+import Footer from "./components/Footer";
+import Preloader from "./components/Preloader";
 
 function App() {
-  return ( 
+  return (
     <Router>
-    <div className="wrapper">
-        {/* navbar */}
+      <div className="App">
+        <Preloader />
         <Navbar />
 
-        {/* sidebar */}
-        {/* <Sidebar /> */}
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/contact" component={Contact} />
 
-        {/* content */}
-         <Switch>
-           {/* about page */}
-          <Route path="/about">
-            <About />
-          </Route>
-          {/* contact us page */}
-          <Route path="/contact">
-            <Contact />
-          </Route>
-          {/* Home */}
-          <Route exact path="/">
-            <Home />
-          </Route>
+          <Route exact path="/blog/:slug" component={Blog} />
+          <Route exact path="/category/:slug" component={Category} />
         </Switch>
-        
-        {/* footer */}
-        <Footer />
 
-        {/* search */}
-        <div className="search-page">
-          <form>
-            <div className="container">
-              <div className="form-field">
-                <input type="text" name="search" placeholder="Enter Your Keywords" />
-                <button type="submit"><i className="la la-search"></i></button>
-              </div>
-            </div>
-          </form>
-          <a href title="" className="close-search"><i className="la la-close"></i></a>
-        </div>
-        {/* <!--SEARCH PAGE END--> */}
-    </div>
+        <Footer />
+        <Search />
+      </div>
     </Router>
   );
 }

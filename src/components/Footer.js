@@ -1,0 +1,121 @@
+import { Link } from "react-router-dom";
+import useFetch from "../hooks/useFetch";
+
+const Footer = () => {
+  const {
+    data: blogs,
+    loading,
+    error,
+  } = useFetch("http://127.0.0.1:8000/api/blogs");
+  return (
+    <div>
+      <footer>
+        <div className="container">
+          <div className="blog-items ft-style p-70">
+            <div className="row">
+              {loading && <h1>Loading</h1>}
+              {error && <h1>Error</h1>}
+              {blogs &&
+                blogs.slice(0, 5).map((blog) => (
+                  <div
+                    className="col-lg-3 col-md-3 col-sm-6 col-12"
+                    key={blog.id}
+                  >
+                    <div className="blog-item">
+                      <div className="blog-img">
+                        <img
+                          src={
+                            "http://127.0.0.1:8000/storage/" +
+                            blog.featured_image
+                          }
+                          alt=""
+                        />
+                      </div>
+                      {/* <!--blog-img end--> */}
+                      <div className="blog-info">
+                        <h3 className="post-title">
+                          <Link to={"/blog/" + blog.slug} title={blog.title}>
+                            {blog.title}
+                          </Link>
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          </div>
+          {/* <!--blog-items end--> */}
+          <div className="footer-content">
+            <div className="row">
+              <div className="col-lg-4 col-md-6 col-sm-6">
+                <div className="ft-logo">
+                  <h1>
+                    <a href="/" title="">
+                      Heeney
+                    </a>
+                  </h1>
+                </div>
+                {/* <!--ft-logo end--> */}
+              </div>
+              <div className="col-lg-4 col-md-6 col-sm-6">
+                <ul className="social-links">
+                  <li>
+                    <a href="/" title="">
+                      <i className="fab fa-facebook-f"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/" title="">
+                      <i className="fab fa-twitter"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/" title="">
+                      <i className="fab fa-linkedin-in"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/" title="">
+                      <i className="fab fa-pinterest-p"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/" title="">
+                      <i className="fab fa-facebook-messenger"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div className="col-lg-4 col-md-12">
+                <ul className="ft-links">
+                  <li>
+                    <Link to="about" title="About us ">
+                      About
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="contact" title="contact us">
+                      Contact
+                    </Link>
+                  </li>
+                </ul>
+                {/* <!--ft-links end--> */}
+              </div>
+            </div>
+          </div>
+          {/* <!--footer-content end--> */}
+        </div>
+      </footer>
+      {/* <!--footer end--> */}
+
+      <section className="bottom-strip">
+        <div className="container">
+          <p>©2018 Heeney. All Rights Reserved.</p>
+        </div>
+      </section>
+      {/* <!--bottom-strip end--> */}
+    </div>
+  );
+};
+
+export default Footer;
