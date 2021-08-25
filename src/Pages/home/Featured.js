@@ -17,7 +17,10 @@ const Featured = () => {
             {loading && <h1>Loading ....</h1>}
             {blogs &&
               blogs.slice(0, 4).map((blog) => (
-                <div className="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div
+                  className="col-lg-3 col-md-6 col-sm-6 col-12"
+                  key={blog.id}
+                >
                   <div className="blog-item">
                     <div className="blog-img">
                       <img
@@ -37,7 +40,8 @@ const Featured = () => {
                       <ul className="meta">
                         <li>{blog.created_at}</li>
                         <li>
-                          <i className="la la-eye"></i>2478
+                          <i className="la la-eye"></i>
+                          {blog.view.views}
                         </li>
                         <li>
                           <a href="/" title="">

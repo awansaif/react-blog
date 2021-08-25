@@ -51,9 +51,11 @@ const Blogs = () => {
                               <ul className="meta">
                                 <li>{blog.created_at}</li>
                                 <li>
-                                  <a href="/" title="">
-                                    <i className="la la-comment-o"></i>4
-                                  </a>
+                                  <i className="la la-eye"></i>
+                                  {blog.view.views}
+                                </li>
+                                <li>
+                                  <i className="la la-comment-o"></i>4
                                 </li>
                               </ul>
                             </div>

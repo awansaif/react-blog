@@ -8,6 +8,7 @@ const useFetch = (url) => {
   useEffect(() => {
     const AbortConst = new AbortController();
     setLoading(true);
+    setError(null);
     fetch(url, { signal: AbortConst.signal })
       .then((res) => res.json())
       .then((data) => setData(data.data))

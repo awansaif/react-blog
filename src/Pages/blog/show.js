@@ -1,8 +1,9 @@
-import { useParams } from "react-router-dom";
-import Sidebar from "../components/sidebar/Sidebar";
-import useFetch from "../hooks/useFetch";
+import { Link, useParams } from "react-router-dom";
+import Sidebar from "../../components/sidebar/Sidebar";
+import useFetch from "../../hooks/useFetch";
+import Footer from "./NextPrev";
 
-const SingleBlog = () => {
+const Blog = () => {
   const { slug } = useParams();
 
   const {
@@ -24,13 +25,18 @@ const SingleBlog = () => {
                     <div className="blog-info">
                       <ul className="meta">
                         <li>
-                          <a href="/" title={slug} className="post-category">
-                            {blog.category.title}
-                          </a>
+                          <Link
+                            to={"/category/" + blog.blog.category.slug}
+                            title={slug}
+                            className="post-category"
+                          >
+                            {blog.blog.category.title}
+                          </Link>
                         </li>
-                        <li>{blog && blog.created_at}</li>
+                        <li>{blog && blog.blog.created_at}</li>
                         <li>
-                          <i className="la la-eye"></i>3258
+                          <i className="la la-eye"></i>
+                          {blog.blog.view.views}
                         </li>
                         <li>
                           <a href="/" title="">
@@ -38,19 +44,22 @@ const SingleBlog = () => {
                           </a>
                         </li>
                       </ul>
-                      <h3 className="post-title">{blog && blog.title}</h3>
+                      <h3 className="post-title">{blog && blog.blog.title}</h3>
                     </div>
                     <div className="blog-img">
                       <img
                         src={
                           blog &&
-                          "http://127.0.0.1:8000/storage/" + blog.featured_image
+                          "http://127.0.0.1:8000/storage/" +
+                            blog.blog.featured_image
                         }
                         alt=""
                       />
                     </div>
                     <div
-                      dangerouslySetInnerHTML={{ __html: blog && blog.body }}
+                      dangerouslySetInnerHTML={{
+                        __html: blog && blog.blog.body,
+                      }}
                     />
                     <div className="post-catgs-links">
                       <ul className="social-links">
@@ -122,23 +131,7 @@ const SingleBlog = () => {
                         </ul>
                       </div>
                     </div>
-                    <div className="post-control">
-                      <ul>
-                        <li className="prev-p">
-                          <a href="/" title="">
-                            {" "}
-                            <i className="fa fa-angle-left"></i>Make More Time
-                            in Motherhood & Your Career
-                          </a>
-                        </li>
-                        <li className="next-p">
-                          <a href="/" title="">
-                            <i className="fa fa-angle-right"></i>5 Simple Steps
-                            To A Happier and Healthier You
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
+                    <Footer next={blog.next} prev={blog.previous} />
                   </div>
                 </div>
                 <div className="comment-section">
@@ -282,4 +275,4 @@ const SingleBlog = () => {
   );
 };
 
-export default SingleBlog;
+export default Blog;

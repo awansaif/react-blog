@@ -1,65 +1,12 @@
 import Category from "./Category";
 import Subscribe from "./Subscribe";
+import Trend from "./Trending";
 
 const Sidebar = () => {
   return (
     <div className="col-lg-4">
+      <Trend />
       <div className="sidebar">
-        <div className="widget widget-trending-posts">
-          <h3 className="widget-title">Trending</h3>
-          <div className="wd-posts">
-            <div className="wd-post">
-              <img src="images/resources/post1.jpg" alt="" />
-              <div className="wd-post-info">
-                <h3 className="post-title">
-                  <a href="standard-post.html" title="">
-                    Living Room Makeover Reveal
-                  </a>
-                </h3>
-                <span className="post-date">Dec 25, 2018</span>
-              </div>
-            </div>
-            {/* <!--wd-post end--> */}
-            <div className="wd-post">
-              <img src="images/resources/post2.jpg" alt="" />
-              <div className="wd-post-info">
-                <h3 className="post-title">
-                  <a href="standard-post.html" title="">
-                    Candy Inspired Treat Recipes
-                  </a>
-                </h3>
-                <span className="post-date">Dec 23, 2018</span>
-              </div>
-            </div>
-            {/* <!--wd-post end--> */}
-            <div className="wd-post">
-              <img src="images/resources/post3.jpg" alt="" />
-              <div className="wd-post-info">
-                <h3 className="post-title">
-                  <a href="standard-post.html" title="">
-                    Fun Spooky Halloween Treats
-                  </a>
-                </h3>
-                <span className="post-date">Dec 21, 2018</span>
-              </div>
-            </div>
-            {/* <!--wd-post end--> */}
-            <div className="wd-post">
-              <img src="images/resources/post4.jpg" alt="" />
-              <div className="wd-post-info">
-                <h3 className="post-title">
-                  <a href="standard-post.html" title="">
-                    Soup Recipes Everyone Will Love
-                  </a>
-                </h3>
-                <span className="post-date">Dec 19, 2018</span>
-              </div>
-            </div>
-            {/* <!--wd-post end--> */}
-          </div>
-          {/* <!--wd-posts end--> */}
-        </div>
-        {/* <!--widget-trending-posts end--> */}
         <div className="widget widget-social-links">
           <ul>
             <li>
@@ -115,65 +62,16 @@ const Sidebar = () => {
 
         <Category />
         <div className="widget widget-fb">
-          <div className="page-img">
-            <img src="images/resources/page-img.jpg" alt="" />
-            <div className="page-hd">
-              <h3>Heeney</h3>
-              <span>321K likes</span>
-            </div>
-            <ul className="fb-opts">
-              <li>
-                <a href="/" title="">
-                  <i className="fab fa-facebook"></i> Like Page
-                </a>
-              </li>
-              <li>
-                <a href="/" title="">
-                  Sign Up
-                </a>
-              </li>
-            </ul>
-          </div>
-          {/* <!--page-img end--> */}
-          <div className="post-mgs">
-            <div className="post-imgs">
-              <h5>You and 16 other friends like this</h5>
-              <ul>
-                <li>
-                  <a href="/" title="">
-                    <img src="images/resources/fb-img1.jpg" alt="" />
-                  </a>
-                </li>
-                <li>
-                  <a href="/" title="">
-                    <img src="images/resources/fb-img2.jpg" alt="" />
-                  </a>
-                </li>
-                <li>
-                  <a href="/" title="">
-                    <img src="images/resources/fb-img3.jpg" alt="" />
-                  </a>
-                </li>
-                <li>
-                  <a href="/" title="">
-                    <img src="images/resources/fb-img4.jpg" alt="" />
-                  </a>
-                </li>
-                <li>
-                  <a href="/" title="">
-                    <img src="images/resources/fb-img5.jpg" alt="" />{" "}
-                  </a>
-                </li>
-                <li>
-                  <a href="/" title="">
-                    <img src="images/resources/fb-img6.jpg" alt="" />
-                  </a>
-                </li>
-              </ul>
-              <div className="clearfix"></div>
-            </div>
-            {/* <!--post-imgs end--> */}
-          </div>
+          <iframe
+            src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FTharkiUstad%2F&tabs=like&width=340&height=130&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
+            width="340"
+            height="130"
+            scrolling="no"
+            frameborder="0"
+            allowfullscreen="true"
+            title="dadds"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+          ></iframe>
         </div>
         {/* <!--widget-fb end--> */}
       </div>
