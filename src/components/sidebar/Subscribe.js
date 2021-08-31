@@ -42,7 +42,7 @@ const Subscribe = () => {
       <h3 className="widget-title">Get Fresh News</h3>
       {message && (
         <div className="alert alert-success">
-          <p></p> {message}
+          <p>{message}</p>
         </div>
       )}
       <form onSubmit={handleSubmit}>

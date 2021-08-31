@@ -1,15 +1,19 @@
 import { Link } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 
-const Featured = () => {
-  const { data: blogs, loading } = useFetch("/api/featured");
+const Blogs = () => {
+  const { data: blogs, loading, error } = useFetch("/api/all?q=saif");
   return (
     <section className="blog-section feat-stors sec-padding">
       <div className="container">
         <div className="sec-title">
-          <h3>Featured Stories </h3>
+          <h3>Blogs</h3>
         </div>
-        {loading && <h1>Loading ....</h1>}
+
+        {loading && <h2>Loading .....</h2>}
+        {error && <h2>Error .....</h2>}
+        {blogs && blogs.length === 0 && <h1>Blogs not Found</h1>}
+        {/* <!--sec-title end--> */}
         <div className="blog-items">
           <div className="row">
             {blogs &&
@@ -27,6 +31,7 @@ const Featured = () => {
                         alt=""
                       />
                     </div>
+                    {/* <!--blog-img end--> */}
                     <div className="blog-info">
                       <h3 className="post-title">
                         <Link to={"/blog/" + blog.slug} title={blog.title}>
@@ -46,14 +51,17 @@ const Featured = () => {
                         </li>
                       </ul>
                     </div>
+                    {/* <!--blog-info end--> */}
                   </div>
+                  {/* <!--blog-item end--> */}
                 </div>
               ))}
           </div>
         </div>
+        {/* <!--blog-items end--> */}
       </div>
     </section>
   );
 };
 
-export default Featured;
+export default Blogs;

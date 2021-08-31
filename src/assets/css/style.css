@@ -1,31 +1,3 @@
-
-
-
-
-/* ===================== TABLE OF CONTENT =======================
-
-
-1.  5 DIFFERENT HOMEPAGES
-2.  RESET CSS
-3.  CROSS BROWSER COMPATABILITY
-4.  SEARCH
-5.  DROPDOWN MENU
-6.  RESPONSIVE HEADER
-7.  SLICK SLIDER 
-8.  HTML5LIGHTBOX VIDEO PLUGIN
-9.  POST DETAILS PAGE
-12. FONT AWESOME FONTS
-12. LINE AWESOME FONTS
-
-
-================================================================= */
-
-
-
-
-
-
-
 /* ================================================================================== 
 									Fonts
 ===================================================================================== */
@@ -159,7 +131,7 @@ body.no-scroll {
 .sub-menu li a:before,
 .side-menu,
 .menu-list ul li a,
-.menu-btn > a span,
+.menu-btn > p span,
 .post-control ul li,
 .post-control ul li a {
 	-webkit-transition: all 0.4s linear;
@@ -342,9 +314,8 @@ header {
 }
 .blog-items.main .blog-item.main-style .post-title {
 	width: 512px;
-	padding: 26px 30px 28px;
+	padding: 26px 0px 28px;
 	margin-bottom: 24px;
-	border:1px solid #4a4a45;
 	font-size: 23px;
 	line-height: 32px;
 }
@@ -686,7 +657,7 @@ header {
 }
 
 .blog-items.style2.sec-padding2 {
-	padding: 50px 0 0 0;
+	padding: 0px 0 0 0;
 }
 .heeney-pagination {
 	margin: 6px 0 0 0;
@@ -1808,35 +1779,35 @@ nav ul li:hover > .sub-menu {
   z-index: 9999999;
   display: none;
 }
-.menu-btn > a {
+.menu-btn > p {
   display: inline-block;
   width: 27px;
   margin-top: 21px;
   float: left;
 }
-.menu-btn > a span {
+.menu-btn > p span {
   display: block;
   width: 100%;
   height: 3px;
   background-color: #181819;
   margin-bottom: 5px;
 }
-.menu-btn > a span:last-child {
+.menu-btn > p span:last-child {
   margin-bottom: 0;
 }
-.menu-btn.active > a span.bar1 {
+.menu-btn.active > p span.bar1 {
   -webkit-transform: translateY(8px) rotate(-45deg);
   -ms-transform: translateY(8px) rotate(-45deg);
   transform: translateY(8px) rotate(-45deg);
 }
-.menu-btn.active > a span.bar2 {
+.menu-btn.active > p span.bar2 {
   opacity: 0;
   visibility: hidden;
   -webkit-transform: scale(2, 1);
   -ms-transform: scale(2, 1);
   transform: scale(2, 1);
 }
-.menu-btn.active > a span.bar3 {
+.menu-btn.active > p span.bar3 {
   -webkit-transform: translateY(-8px) rotate(-135deg);
   -ms-transform: translateY(-8px) rotate(-135deg);
   transform: translateY(-8px) rotate(-135deg);
@@ -2253,10 +2224,17 @@ nav ul li:hover > .sub-menu {
 .author-img {
 	display: table-cell;
 	width: 100px;
+	height: 100px;
 	float: left;
+	border-radius: 50%;
+	overflow: hidden;
+	object-fit: cover;
 }
 .author-img > img {
 	width: 100%;
+	height: 100%;
+	object-fit: cover;
+
 }
 .author-info {
 	display: table-cell;

@@ -2,18 +2,13 @@ import { Link } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 
 const Recommended = () => {
-  const {
-    data: blogs,
-    loading,
-    error,
-  } = useFetch("http://127.0.0.1:8000/api/recommended");
+  const { data: blogs, loading, error } = useFetch("/api/recommended");
   return (
     <section className="recommend-posts p-75">
       <div className="container">
         <div className="sec-title">
           <h3>Recommended</h3>
         </div>
-        {/* <!--sec-title end--> */}
         <div className="blog-items smaller-post">
           <div className="row">
             {loading && <h2>Loding ....</h2>}
@@ -30,7 +25,6 @@ const Recommended = () => {
                         alt=""
                       />
                     </div>
-                    {/* <!--blog-img end--> */}
                     <div className="blog-info">
                       <a href="/" title="" className="post-category">
                         {blog.category.title}
@@ -53,9 +47,7 @@ const Recommended = () => {
                         </li>
                       </ul>
                     </div>
-                    {/* <!--blog-info end--> */}
                   </div>
-                  {/* <!--blog-item end--> */}
                 </div>
               ))}
           </div>

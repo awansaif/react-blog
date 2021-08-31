@@ -3,11 +3,7 @@ import useFetch from "../hooks/useFetch";
 
 const SingleCategory = () => {
   const { slug } = useParams();
-  const {
-    data: blogs,
-    loading,
-    error,
-  } = useFetch("http://127.0.0.1:8000/api/category/" + slug);
+  const { data: blogs, loading, error } = useFetch("/api/category/" + slug);
   return (
     <section className="blog-section feat-stors sec-padding">
       <div className="container">

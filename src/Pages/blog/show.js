@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import Sidebar from "../../components/sidebar/Sidebar";
 import useFetch from "../../hooks/useFetch";
+import CommentArea from "./CommentArea";
 import Footer from "./NextPrev";
 
 const Blog = () => {
@@ -10,13 +11,15 @@ const Blog = () => {
     data: blog,
     loading,
     error,
-  } = useFetch("http://127.0.0.1:8000/api/blogs/" + slug);
+    message,
+  } = useFetch("/api/blogs/" + slug);
   return (
     <section className="main-content p-80">
       <div className="container">
         {loading && <h2>Loading ... </h2>}
         {error && <h2>{error.message}</h2>}
-        {blog ? (
+        {message && <h2>{message}</h2>}
+        {blog && (
           <div className="row">
             <div className="col-lg-8 mr-50">
               <div className="single-page-content">
@@ -62,6 +65,8 @@ const Blog = () => {
                       }}
                     />
                     <div className="post-catgs-links">
+                      <div className="sharethis-inline-share-buttons"></div>
+                      {/* <div className="sharethis-inline-share-buttons"></div> */}
                       <ul className="social-links">
                         <li>
                           <a href="/" title="">
@@ -92,40 +97,29 @@ const Blog = () => {
                       <div className="clearfix"></div>
                     </div>
                     <div className="post-author-info">
-                      <div className="author-img">
-                        <img src="images/resources/auth-img.png" alt="" />
+                      <div
+                        className="author-img"
+                        style={{ borderRadius: "50%" }}
+                      >
+                        <img
+                          src={
+                            process.env.REACT_APP_API_STORAGE_URL +
+                            blog.blog.profile.avatar_path
+                          }
+                          alt=""
+                        />
                       </div>
                       <div className="author-info">
                         <h3>
                           <a href="/" title="">
-                            Natali Larkins
+                            {blog.blog.editor.name}
                           </a>
                         </h3>
-                        <p>
-                          Proin gravida nibh vel velit auctor aliquet. Aenean
-                          sollicitudin, lorem quisma bibendum auctor nisi elit
-                          consequat ipsum, nec sagittis sem amet nibh vulputate
-                          cursus itaet mauris.{" "}
-                        </p>
+                        <p>{blog.blog.profile.about_me}</p>
                         <ul className="social-links">
                           <li>
-                            <a href="/" title="">
-                              <i className="fab fa-twitter"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="/" title="">
-                              <i className="fab fa-pinterest-p"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="/" title="">
-                              <i className="fab fa-facebook-f"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="/" title="">
-                              <i className="fab fa-instagram"></i>
+                            <a href={blog.blog.profile.website_link} title="">
+                              <i className="fas fa-website"></i>
                             </a>
                           </li>
                         </ul>
@@ -134,141 +128,12 @@ const Blog = () => {
                     <Footer next={blog.next} prev={blog.previous} />
                   </div>
                 </div>
-                <div className="comment-section">
-                  <div className="comment-list-sec">
-                    <div className="sec-title">
-                      <h3>Comments </h3>
-                    </div>
-                    <ul className="comment-list">
-                      <li>
-                        <div className="comment">
-                          <div className="cm-img">
-                            <img src="images/resources/auth-img.png" alt="" />
-                          </div>
-                          <div className="cm-info">
-                            <div className="cm-hed">
-                              <h3>Palmer Warren</h3>
-                              <span>December 31, 2018</span>
-                            </div>
-                            <div className="clearfix"></div>
-                            <p>
-                              Proin gravida nibh vel velit auctor aliquet.
-                              Aenean sollicitudin, lorem quisma bibendum auctor
-                              nisi elit consequat ipsum, nec sagittis sem amet
-                              nibh.{" "}
-                            </p>
-                            <a href="/" title="" className="reply">
-                              Reply
-                            </a>
-                          </div>
-                        </div>
-                        <ul>
-                          <li>
-                            <div className="comment">
-                              <div className="cm-img">
-                                <img
-                                  src="images/resources/auth-img.png"
-                                  alt=""
-                                />
-                              </div>
-                              <div className="cm-info">
-                                <div className="cm-hed">
-                                  <h3>Natali Larkins</h3>
-                                  <span>December 31, 2018</span>
-                                </div>
-                                <div className="clearfix"></div>
-                                <p>
-                                  Proin gravida nibh vel velit auctor aliquet.
-                                  Aenean sollicitudin, lorem quisma bibendum
-                                  auctor nisi elit consequat ipsum.{" "}
-                                </p>
-                                <a href="/" title="" className="reply">
-                                  Reply
-                                </a>
-                              </div>
-                            </div>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <div className="comment">
-                          <div className="cm-img">
-                            <img src="images/resources/auth-img.png" alt="" />
-                          </div>
-                          <div className="cm-info">
-                            <div className="cm-hed">
-                              <h3>Palmer Warren</h3>
-                              <span>December 31, 2018</span>
-                            </div>
-                            <div className="clearfix"></div>
-                            <p>
-                              Proin gravida nibh vel velit auctor aliquet.
-                              Aenean sollicitudin, lorem quisma bibendum auctor
-                              nisi elit consequat ipsum, nec sagittis sem amet
-                              nibh.{" "}
-                            </p>
-                            <a href="/" title="" className="reply">
-                              Reply
-                            </a>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="comment-form">
-                    <div className="sec-title">
-                      <h3>Leave A Reply</h3>
-                    </div>
-                    <div className="cont-form-sec">
-                      <form>
-                        <div className="row">
-                          <div className="col-lg-6">
-                            <div className="form-field">
-                              <input
-                                type="text"
-                                name="name"
-                                placeholder="Name"
-                                required=""
-                              />
-                            </div>
-                          </div>
-                          <div className="col-lg-6">
-                            <div className="form-field">
-                              <input
-                                type="email"
-                                name="email"
-                                placeholder="Email"
-                                required=""
-                              />
-                            </div>
-                          </div>
-                          <div className="col-lg-12">
-                            <div className="form-field">
-                              <textarea
-                                name="message"
-                                placeholder="Your Message"
-                              ></textarea>
-                            </div>
-                          </div>
-                          <div className="col-lg-12">
-                            <input
-                              type="submit"
-                              name="submit"
-                              value="Post Comment"
-                            />
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
-                </div>
+                <CommentArea slug={blog.blog.slug} />
               </div>
             </div>
 
             <Sidebar />
           </div>
-        ) : (
-          <h1>No Record found again you query</h1>
         )}
       </div>
     </section>

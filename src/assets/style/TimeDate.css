@@ -1,0 +1,20 @@
+.time-date {
+    box-sizing: border-box;
+    padding: 26px 29px 29px;
+    position: relative;
+    border: 1px solid #e7eaeb;
+    margin-bottom: 45px;
+    text-align: center;
+    font-size: 1.5em;
+    line-height: 1.4em;
+    color: #333855;
+    font-weight: 700;
+}
+.time-date span {
+    font-size: .6em;
+    margin-top: .5rem;
+    display: block;
+    text-transform: uppercase;
+    color: #4098f3;
+    font-weight: 800;
+}

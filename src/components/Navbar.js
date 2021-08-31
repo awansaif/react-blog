@@ -7,17 +7,19 @@ const Navbar = () => {
         <div className="container">
           <div className="top-bar">
             <div className="menu-btn">
-              <a href="/" title="">
+              <p>
                 <span className="bar1"></span>
                 <span className="bar2"></span>
                 <span className="bar3"></span>
-              </a>
+              </p>
             </div>
-            {/* menu-btn end */}
             <nav>
               <ul>
                 <li>
                   <Link to="/">Home</Link>
+                </li>
+                <li>
+                  <Link to="/blogs">Blogs</Link>
                 </li>
                 <li>
                   <Link to="/about">About</Link>
@@ -27,7 +29,6 @@ const Navbar = () => {
                 </li>
               </ul>
             </nav>
-            {/* <!--navigation end--> */}
             <div className="rt-subs">
               <a className="subscribe-btn" href="/" title="">
                 <i className="la la-envelope-o"></i> Subscribe
@@ -36,30 +37,29 @@ const Navbar = () => {
                 <i className="la la-search"></i>
               </a>
             </div>
-            {/* <!--rt-subs end--> */}
             <div className="clearfix"></div>
           </div>
           <div className="bottom-header">
             <div className="container">
               <div className="logo">
                 <h2>
-                  <Link to="/">Heeney</Link>
+                  <Link to="/">{process.env.REACT_APP_NAME}</Link>
                 </h2>
               </div>
-              {/* <!-- logo end--> */}
             </div>
           </div>
-          {/* <!--bottom-header end--> */}
         </div>
       </header>
-      {/* // <!--HEADER END--> */}
       <div className="side-menu">
-        <a href="/" title="" className="close-sidemenu">
+        <p className="close-sidemenu">
           <i className="la la-close"></i>
-        </a>
+        </p>
         <ul className="navigation">
           <li>
             <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/blogs">Blogs</Link>
           </li>
           <li>
             <Link to="/about">About</Link>
@@ -68,15 +68,12 @@ const Navbar = () => {
             <Link to="/contact">Contact</Link>
           </li>
         </ul>
-        {/* <!--navigation end--> */}
         <div className="logo">
           <h2>
-            <Link to="/">Heeney</Link>
+            <Link to="/">{process.env.REACT_APP_NAME}</Link>
           </h2>
         </div>
-        {/* <!-- logo end--> */}
       </div>
-      {/* // <!--side-menu end--> */}
     </div>
   );
 };

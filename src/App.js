@@ -4,30 +4,33 @@ import Home from "./pages/home/Home";
 import About from "./pages/about/About";
 import Contact from "./pages/Contact";
 import Blog from "./pages/blog/show";
+import Blogs from "./pages/blog/Blogs";
 import Category from "./pages/SingleCategory";
 import Search from "./components/Search";
 import Footer from "./components/Footer";
-import Preloader from "./components/Preloader";
+import ProfileContextProvider from "./context/ProfileContext";
 
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Preloader />
-        <Navbar />
+      <ProfileContextProvider>
+        <div className="App">
+          <Navbar />
 
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/contact" component={Contact} />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/blogs" component={Blogs} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/contact" component={Contact} />
 
-          <Route exact path="/blog/:slug" component={Blog} />
-          <Route exact path="/category/:slug" component={Category} />
-        </Switch>
+            <Route exact path="/blog/:slug" component={Blog} />
+            <Route exact path="/category/:slug" component={Category} />
+          </Switch>
 
-        <Footer />
-        <Search />
-      </div>
+          <Footer />
+          <Search />
+        </div>
+      </ProfileContextProvider>
     </Router>
   );
 }

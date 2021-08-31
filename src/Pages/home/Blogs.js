@@ -3,14 +3,13 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import useFetch from "../../hooks/useFetch";
 
 const Blogs = () => {
-  const {
-    data: blogs,
-    loading,
-    error,
-  } = useFetch("http://127.0.0.1:8000/api/blogs");
+  const { data: blogs, loading, error } = useFetch("/api/blogs");
   return (
     <section className="main-content pb-0">
       <div className="container">
+        <div className="sec-title">
+          <h3>Blogs </h3>
+        </div>
         {loading && <h1>Loading ....</h1>}
         {error && <h1>{error}</h1>}
         <div className="row">
@@ -59,46 +58,22 @@ const Blogs = () => {
                                 </li>
                               </ul>
                             </div>
-                            {/* <!--blog-info end--> */}
                           </div>
-                          {/* <!--blog-item end--> */}
                         </div>
                       );
                     })}
                 </div>
               </div>
-              {/* <!--blog-items end--> */}
             </div>
-            {/* <!--blog-section end--> */}
 
-            {blogs && blogs.length > 8 && (
+            {blogs && blogs.length >= 10 && (
               <div className="heeney-pagination text-center">
                 <nav aria-label="Page navigation example">
                   <ul className="pagination justify-content-center">
-                    <li className="page-item disabled">
-                      <a className="page-link" href="/" tabindex="-1">
-                        <i className="fas fa-arrow-left"></i>
-                      </a>
-                    </li>
-                    <li className="page-item active">
-                      <a className="page-link" href="/">
-                        1
-                      </a>
-                    </li>
                     <li className="page-item">
-                      <a className="page-link" href="/">
-                        2
-                      </a>
-                    </li>
-                    <li className="page-item">
-                      <a className="page-link" href="/">
-                        3
-                      </a>
-                    </li>
-                    <li className="page-item">
-                      <a className="page-link" href="/">
+                      <Link className="page-link" to="/blogs" tabindex="-1">
                         <i className="fas fa-arrow-right"></i>
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </nav>

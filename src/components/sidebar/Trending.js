@@ -2,11 +2,7 @@ import { Link } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 
 const Trend = () => {
-  const {
-    data: blogs,
-    loading,
-    error,
-  } = useFetch("http://127.0.0.1:8000/api/trending");
+  const { data: blogs } = useFetch("/api/trending");
   return (
     <div className="widget widget-trending-posts">
       <h3 className="widget-title">Trending</h3>
@@ -29,7 +25,6 @@ const Trend = () => {
             </div>
           ))}
       </div>
-      {/* <!--wd-posts end--> */}
     </div>
   );
 };

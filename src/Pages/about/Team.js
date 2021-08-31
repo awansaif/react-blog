@@ -2,7 +2,7 @@ import "../../assets/style/Team.css";
 import useFetch from "../../hooks/useFetch";
 
 const Team = () => {
-  const { data: members } = useFetch("http://127.0.0.1:8000/api/team");
+  const { data: members } = useFetch("/api/team");
   return (
     <div className="members">
       {members
