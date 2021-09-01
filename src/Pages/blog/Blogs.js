@@ -19,7 +19,7 @@ const Blogs = () => {
             {blogs &&
               blogs.map((blog) => (
                 <div
-                  className="col-lg-3 col-md-6 col-sm-6 col-12"
+                  className="col-lg-3 col-md-6 col-sm-6 col-12 mb-4"
                   key={blog.id}
                 >
                   <div className="blog-item">
@@ -31,7 +31,6 @@ const Blogs = () => {
                         alt=""
                       />
                     </div>
-                    {/* <!--blog-img end--> */}
                     <div className="blog-info">
                       <h3 className="post-title">
                         <Link to={"/blog/" + blog.slug} title={blog.title}>
@@ -42,23 +41,21 @@ const Blogs = () => {
                         <li>{blog.created_at}</li>
                         <li>
                           <i className="la la-eye"></i>
-                          {blog.view.views}
+                          {blog.views}
                         </li>
                         <li>
                           <a href="/" title="">
-                            <i className="la la-comment-o"></i>3
+                            <i className="la la-comment-o"></i>
+                            {blog.comments_count}
                           </a>
                         </li>
                       </ul>
                     </div>
-                    {/* <!--blog-info end--> */}
                   </div>
-                  {/* <!--blog-item end--> */}
                 </div>
               ))}
           </div>
         </div>
-        {/* <!--blog-items end--> */}
       </div>
     </section>
   );

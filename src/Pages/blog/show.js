@@ -39,35 +39,43 @@ const Blog = () => {
                         <li>{blog && blog.blog.created_at}</li>
                         <li>
                           <i className="la la-eye"></i>
-                          {blog.blog.view.views}
+                          {blog.blog.views}
                         </li>
                         <li>
                           <a href="/" title="">
-                            <i className="la la-comment-o"></i>3
+                            <i className="la la-comment-o"></i>
+                            {blog.blog.comments_count}
                           </a>
                         </li>
                       </ul>
-                      <h3 className="post-title">{blog && blog.blog.title}</h3>
+                      <h3 className="post-title">{blog.blog.title}</h3>
                     </div>
                     <div className="blog-img">
                       <img
                         src={
-                          blog &&
                           "http://127.0.0.1:8000/storage/" +
-                            blog.blog.featured_image
+                          blog.blog.featured_image
                         }
                         alt=""
                       />
                     </div>
                     <div
-                      dangerouslySetInnerHTML={{
-                        __html: blog && blog.blog.body,
+                      className="ck-content"
+                      style={{
+                        wordWrap: "break-word",
+                        display: "inline-block",
                       }}
-                    />
-                    <div className="post-catgs-links">
+                    >
+                      <div
+                        className="editor"
+                        dangerouslySetInnerHTML={{
+                          __html: blog.blog.body,
+                        }}
+                      />
+                    </div>
+                    <div className="post-catgs-links mt-5">
                       <div className="sharethis-inline-share-buttons"></div>
-                      {/* <div className="sharethis-inline-share-buttons"></div> */}
-                      <ul className="social-links">
+                      {/* <ul className="social-links">
                         <li>
                           <a href="/" title="">
                             <i className="fab fa-facebook-f"></i>
@@ -93,7 +101,7 @@ const Blog = () => {
                             <i className="fab fa-facebook-messenger"></i>
                           </a>
                         </li>
-                      </ul>
+                      </ul> */}
                       <div className="clearfix"></div>
                     </div>
                     <div className="post-author-info">

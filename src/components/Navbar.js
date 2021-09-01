@@ -30,12 +30,9 @@ const Navbar = () => {
               </ul>
             </nav>
             <div className="rt-subs">
-              <a className="subscribe-btn" href="/" title="">
-                <i className="la la-envelope-o"></i> Subscribe
-              </a>
-              <a className="search-btn" href="/" title="">
-                <i className="la la-search"></i>
-              </a>
+              <Link className="subscribe-btn" to="/editors" title="">
+                <i className="la la-pencil"></i> Editors
+              </Link>
             </div>
             <div className="clearfix"></div>
           </div>

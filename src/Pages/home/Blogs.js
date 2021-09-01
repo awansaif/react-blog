@@ -51,10 +51,11 @@ const Blogs = () => {
                                 <li>{blog.created_at}</li>
                                 <li>
                                   <i className="la la-eye"></i>
-                                  {blog.view.views}
+                                  {blog.views}
                                 </li>
                                 <li>
-                                  <i className="la la-comment-o"></i>4
+                                  <i className="la la-comment-o"></i>
+                                  {blog.comments_count}
                                 </li>
                               </ul>
                             </div>

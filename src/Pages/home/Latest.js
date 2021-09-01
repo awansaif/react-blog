@@ -43,38 +43,12 @@ const Latest = () => {
                         <li>{blogs[0].created_at}</li>
                         <li>
                           <i className="la la-eye"></i>
-                          {blogs[0].view.views}
+                          {blogs[0].views}
                         </li>
                         <li>
                           <a href="/" title="">
-                            <i className="la la-comment-o"></i>4
-                          </a>
-                        </li>
-                      </ul>
-                      <ul className="social-links">
-                        <li>
-                          <a href="/" title="">
-                            <i className="fab fa-facebook-f"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/" title="">
-                            <i className="fab fa-twitter"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/" title="">
-                            <i className="fab fa-linkedin-in"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/" title="">
-                            <i className="fab fa-pinterest-p"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/" title="">
-                            <i className="fab fa-facebook-messenger"></i>
+                            <i className="la la-comment-o"></i>
+                            {blogs[0].comments_count}
                           </a>
                         </li>
                       </ul>

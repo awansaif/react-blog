@@ -9,6 +9,8 @@ import Category from "./pages/SingleCategory";
 import Search from "./components/Search";
 import Footer from "./components/Footer";
 import ProfileContextProvider from "./context/ProfileContext";
+import Editors from "./pages/editor/List";
+import EditorBlog from "./pages/editor/show";
 
 function App() {
   return (
@@ -25,6 +27,9 @@ function App() {
 
             <Route exact path="/blog/:slug" component={Blog} />
             <Route exact path="/category/:slug" component={Category} />
+
+            <Route exact path="/editors" component={Editors} />
+            <Route exact path="/editor/:slug" component={EditorBlog} />
           </Switch>
 
           <Footer />

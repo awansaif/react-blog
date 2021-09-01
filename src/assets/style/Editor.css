@@ -1,0 +1,33 @@
+.editors {
+    display: flex;
+    flex-wrap: wrap;
+}
+.editor-profile {
+    width: 200px;
+    height: 220px;
+    position: relative;
+    margin: 1rem 1rem;
+    border-radius: 5px;
+    box-shadow: 3px 9px 8px 0px #eae4e4bf;
+    overflow: hidden;
+}
+
+.editor-profile img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.editor-name {
+    position: absolute;
+    top: 0px;
+    background: #06060659;
+    color: #fff;
+    font-weight: 700;
+    width: 100%;
+    font-size: 1.2em;
+    text-transform: capitalize;
+    padding: .5rem .5rem;
+}
+.editor-link {
+    color: #fff;
+}

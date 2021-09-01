@@ -1,21 +1,28 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 
-const Recommended = () => {
-  const { data: blogs, loading, error } = useFetch("/api/recommended");
+const EditorBlogs = () => {
+  const { slug } = useParams();
+  const { data: blogs, loading, error } = useFetch("/api/editor/" + slug);
   return (
-    <section className="recommend-posts p-75">
+    <section className="blog-section feat-stors sec-padding">
       <div className="container">
         <div className="sec-title">
-          <h3>Recommended</h3>
+          <h3>Blogs</h3>
         </div>
-        <div className="blog-items smaller-post">
+
+        {loading && <h2>Loading .....</h2>}
+        {error && <h2>Error .....</h2>}
+        {blogs && blogs.length === 0 && <h1>Blogs not Found</h1>}
+        {/* <!--sec-title end--> */}
+        <div className="blog-items">
           <div className="row">
-            {loading && <h2>Loding ....</h2>}
-            {error && <h2>Error ....</h2>}
             {blogs &&
               blogs.map((blog) => (
-                <div className="col-lg-6" key={blog.id}>
+                <div
+                  className="col-lg-3 col-md-6 col-sm-6 col-12 mb-4"
+                  key={blog.id}
+                >
                   <div className="blog-item">
                     <div className="blog-img">
                       <img
@@ -26,11 +33,8 @@ const Recommended = () => {
                       />
                     </div>
                     <div className="blog-info">
-                      <a href="/" title="" className="post-category">
-                        {blog.category.title}
-                      </a>
                       <h3 className="post-title">
-                        <Link to={"/blog/" + blog.slug} title="">
+                        <Link to={"/blog/" + blog.slug} title={blog.title}>
                           {blog.title}
                         </Link>
                       </h3>
@@ -58,4 +62,4 @@ const Recommended = () => {
   );
 };
 
-export default Recommended;
+export default EditorBlogs;
