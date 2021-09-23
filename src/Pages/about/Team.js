@@ -9,7 +9,11 @@ const Team = () => {
         ? members.map((member) => (
             <div className="member_image" key={member.id}>
               <img
-                src={"http://127.0.0.1:8000/storage/" + member.avatar_path}
+                src={
+                  process.env.REACT_APP_API_STORAGE_URL +
+                  "/" +
+                  member.avatar_path
+                }
                 alt=""
               />
               <p>{member.name}</p>
