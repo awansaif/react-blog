@@ -53,7 +53,8 @@ const Blog = () => {
                     <div className="blog-img">
                       <img
                         src={
-                          "http://127.0.0.1:8000/storage/" +
+                          process.env.REACT_APP_API_STORAGE_URL +
+                          "/" +
                           blog.blog.featured_image
                         }
                         alt=""
@@ -111,8 +112,11 @@ const Blog = () => {
                       >
                         <img
                           src={
-                            process.env.REACT_APP_API_STORAGE_URL +
-                            blog.blog.profile.avatar_path
+                            blog.blog.profile
+                              ? process.env.REACT_APP_API_STORAGE_URL +
+                                "/" +
+                                blog.blog.profile.avatar_path
+                              : "saif.jpg"
                           }
                           alt=""
                         />

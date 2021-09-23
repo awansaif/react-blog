@@ -22,7 +22,9 @@ const Featured = () => {
                     <div className="blog-img">
                       <img
                         src={
-                          "http://127.0.0.1:8000/storage/" + blog.featured_image
+                          process.env.REACT_APP_API_STORAGE_URL +
+                          "/" +
+                          +blog.featured_image
                         }
                         alt=""
                       />
