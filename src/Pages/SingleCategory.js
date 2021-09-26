@@ -24,7 +24,7 @@ const SingleCategory = () => {
                       src={
                         process.env.REACT_APP_API_STORAGE_URL +
                         "/" +
-                        +blog.featured_image
+                        blog.featured_image
                       }
                       alt=""
                     />

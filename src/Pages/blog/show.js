@@ -63,8 +63,8 @@ const Blog = () => {
                     <div
                       className="ck-content"
                       style={{
-                        wordWrap: "break-word",
-                        display: "inline-block",
+                        width: "100%",
+                        all: "reset",
                       }}
                     >
                       <div
@@ -99,11 +99,12 @@ const Blog = () => {
                             {blog.blog.editor.name}
                           </a>
                         </h3>
-                        <p>{blog.blog.profile.about_me}</p>
+                        <p>{blog.blog.profile?.about_me}</p>
                         <ul className="social-links">
                           <li>
-                            <a href={blog.blog.profile.website_link} title="">
+                            <a href={blog.blog.profile?.website_link} title="">
                               <i className="fas fa-website"></i>
+                              Website
                             </a>
                           </li>
                         </ul>
