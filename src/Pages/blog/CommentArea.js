@@ -108,11 +108,9 @@ const CommentArea = ({ slug }) => {
         </div>
         <ul className="comment-list">
           {loading && <li>Loading .....</li>}
-          {comments &&
-            comments.length > 0 &&
-            comments.map((comment) => (
-              <Comments loading={loading} comment={comment} key={comment.id} />
-            ))}
+          {comments?.map((comment) => (
+            <Comments loading={loading} comment={comment} key={comment.id} />
+          ))}
         </ul>
       </div>
     </div>

@@ -75,34 +75,6 @@ const Blog = () => {
                       />
                     </div>
                     <div className="post-catgs-links mt-5">
-                      <div className="sharethis-inline-share-buttons"></div>
-                      {/* <ul className="social-links">
-                        <li>
-                          <a href="/" title="">
-                            <i className="fab fa-facebook-f"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/" title="">
-                            <i className="fab fa-twitter"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/" title="">
-                            <i className="fab fa-linkedin-in"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/" title="">
-                            <i className="fab fa-pinterest-p"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/" title="">
-                            <i className="fab fa-facebook-messenger"></i>
-                          </a>
-                        </li>
-                      </ul> */}
                       <div className="clearfix"></div>
                     </div>
                     <div className="post-author-info">

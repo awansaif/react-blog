@@ -10,7 +10,7 @@ const Subscribe = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setprostatus(true);
-    fetch("http://127.0.0.1:8000/api/subscribe", {
+    fetch(process.env.REACT_APP_API_URL + "/api/subscribe", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -53,17 +53,19 @@ const Subscribe = () => {
           placeholder="Enter your email adress"
           outcomplete="email"
         />
-        {error && <p className="text-danger"> {error} </p>}
         {!prostatus ? (
           <button type="submit">
             <i className="far fa-paper-plane"></i>
           </button>
         ) : (
-          <button type="submit">
-            <i className="fas fa-trah"></i>
-          </button>
+          <button type="submit">Wait</button>
         )}
       </form>
+      {error && (
+        <p className="text-danger" style={{ display: "block" }}>
+          {error}
+        </p>
+      )}
       <img src="images/penc-img.png" alt="" className="penc-img" />
     </div>
   );

@@ -52,11 +52,9 @@ const About = () => {
                   )}
                 </div>
               </div>
-              {/* <!--about-cont end--> */}
             </div>
           </div>
         </div>
-        {/* <!--about-sec end--> */}
       </div>
     </section>
   );

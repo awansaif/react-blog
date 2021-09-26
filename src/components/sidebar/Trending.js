@@ -11,7 +11,11 @@ const Trend = () => {
           blogs.map((blog) => (
             <div className="wd-post" key={blog.id}>
               <img
-                src={"http://127.0.0.1:8000/storage/" + blog.featured_image}
+                src={
+                  process.env.REACT_APP_API_STORAGE_URL +
+                  "/" +
+                  blog.featured_image
+                }
                 alt=""
               />
               <div className="wd-post-info">

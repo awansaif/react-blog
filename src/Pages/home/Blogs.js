@@ -17,58 +17,51 @@ const Blogs = () => {
             <div className="blog-section">
               <div className="blog-items style2 sec-padding2">
                 <div className="row">
-                  {blogs &&
-                    blogs.map((blog) => {
-                      return (
-                        <div
-                          className="col-lg-6 col-md-6 col-sm-6 col-12"
-                          key={blog.id}
-                        >
-                          <div className="blog-item">
-                            <div className="blog-img">
-                              <img
-                                src={
-                                  process.env.REACT_APP_API_STORAGE_URL +
-                                  "/" +
-                                  blog.featured_image
-                                }
-                                alt=""
-                              />
-                            </div>
-                            {/* <!--blog-img end--> */}
-                            <div className="blog-info">
-                              <a href="/" title="" className="post-category">
-                                {blog.category.title}
-                              </a>
-                              <h3 className="post-title">
-                                <Link
-                                  to={"/blog/" + blog.slug}
-                                  title={blog.title}
-                                >
-                                  {blog.title}
-                                </Link>
-                              </h3>
-                              <ul className="meta">
-                                <li>{blog.created_at}</li>
-                                <li>
-                                  <i className="la la-eye"></i>
-                                  {blog.views}
-                                </li>
-                                <li>
-                                  <i className="la la-comment-o"></i>
-                                  {blog.comments_count}
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
+                  {blogs?.map((blog) => (
+                    <div
+                      className="col-lg-6 col-md-6 col-sm-6 col-12"
+                      key={blog.id}
+                    >
+                      <div className="blog-item">
+                        <div className="blog-img">
+                          <img
+                            src={
+                              process.env.REACT_APP_API_STORAGE_URL +
+                              "/" +
+                              blog.featured_image
+                            }
+                            alt=""
+                          />
                         </div>
-                      );
-                    })}
+                        <div className="blog-info">
+                          <a href="/" title="" className="post-category">
+                            {blog.category.title}
+                          </a>
+                          <h3 className="post-title">
+                            <Link to={"/blog/" + blog.slug} title={blog.title}>
+                              {blog.title}
+                            </Link>
+                          </h3>
+                          <ul className="meta">
+                            <li>{blog.created_at}</li>
+                            <li>
+                              <i className="la la-eye"></i>
+                              {blog.views}
+                            </li>
+                            <li>
+                              <i className="la la-comment-o"></i>
+                              {blog.comments_count}
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
 
-            {blogs && blogs.length >= 10 && (
+            {blogs?.length >= 10 && (
               <div className="heeney-pagination text-center">
                 <nav aria-label="Page navigation example">
                   <ul className="pagination justify-content-center">

@@ -17,38 +17,37 @@ const Latest = () => {
                   <div className="blog-img">
                     <img
                       src={
-                        blogs &&
                         process.env.REACT_APP_API_STORAGE_URL +
-                          "/" +
-                          blogs[0].featured_image
+                        "/" +
+                        blogs[0]?.featured_image
                       }
                       alt=""
                     />
                     <Link
-                      to={"/category/" + blogs[0].category.slug}
+                      to={"/category/" + blogs[0]?.category.slug}
                       title=""
                       className="post-category"
                     >
-                      {blogs[0].category.title}
+                      {blogs[0]?.category.title}
                     </Link>
                   </div>
                   <div className="blog-info">
                     <h3 className="post-title">
-                      <Link to={"/blog/" + blogs[0].slug} title="">
-                        {blogs[0].title}
+                      <Link to={"/blog/" + blogs[0]?.slug} title="">
+                        {blogs[0]?.title}
                       </Link>
                     </h3>
                     <div className="met-soc">
                       <ul className="meta">
-                        <li>{blogs[0].created_at}</li>
+                        <li>{blogs[0]?.created_at}</li>
                         <li>
                           <i className="la la-eye"></i>
-                          {blogs[0].views}
+                          {blogs[0]?.views}
                         </li>
                         <li>
                           <a href="/" title="">
                             <i className="la la-comment-o"></i>
-                            {blogs[0].comments_count}
+                            {blogs[0]?.comments_count}
                           </a>
                         </li>
                       </ul>
@@ -63,15 +62,15 @@ const Latest = () => {
                       src={
                         process.env.REACT_APP_API_STORAGE_URL +
                         "/" +
-                        blogs[1].featured_image
+                        blogs[1]?.featured_image
                       }
                       alt=""
                     />
                   </div>
                   <div className="blog-info">
                     <h3 className="post-title">
-                      <Link to={"/blog/" + blogs[1].slug} title="">
-                        {blogs[1].title}
+                      <Link to={"/blog/" + blogs[1]?.slug} title="">
+                        {blogs[1]?.title}
                       </Link>
                     </h3>
                   </div>
@@ -82,18 +81,16 @@ const Latest = () => {
                       src={
                         process.env.REACT_APP_API_STORAGE_URL +
                         "/" +
-                        blogs[2].featured_image
+                        blogs[2]?.featured_image
                       }
                       alt=""
                     />
                   </div>
                   <div className="blog-info">
                     <h3 className="post-title">
-                      {
-                        <Link to={"/blog/" + blogs[2].slug} title="">
-                          {blogs[2].title}
-                        </Link>
-                      }
+                      <Link to={"/blog/" + blogs[2]?.slug} title="">
+                        {blogs[2]?.title}
+                      </Link>
                     </h3>
                   </div>
                 </div>

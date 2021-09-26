@@ -16,36 +16,34 @@ const Footer = () => {
             <div className="row">
               {loading && <h1>Loading</h1>}
               {error && <h1>Error</h1>}
-              {blogs &&
-                blogs.slice(0, 4).map((blog) => (
-                  <div
-                    className="col-lg-3 col-md-3 col-sm-6 col-12"
-                    key={blog.id}
-                  >
-                    <div className="blog-item">
-                      <div className="blog-img">
-                        <img
-                          src={
-                            "http://127.0.0.1:8000/storage/" +
-                            blog.featured_image
-                          }
-                          alt=""
-                        />
-                      </div>
-                      {/* <!--blog-img end--> */}
-                      <div className="blog-info">
-                        <h3 className="post-title">
-                          <Link to={"/blog/" + blog.slug} title={blog.title}>
-                            {blog.title}
-                          </Link>
-                        </h3>
-                      </div>
+              {blogs?.slice(0, 4).map((blog) => (
+                <div
+                  className="col-lg-3 col-md-3 col-sm-6 col-12"
+                  key={blog.id}
+                >
+                  <div className="blog-item">
+                    <div className="blog-img">
+                      <img
+                        src={
+                          process.env.REACT_APP_API_STORAGE_URL +
+                          "/" +
+                          blog.featured_image
+                        }
+                        alt=""
+                      />
+                    </div>
+                    <div className="blog-info">
+                      <h3 className="post-title">
+                        <Link to={"/blog/" + blog.slug} title={blog.title}>
+                          {blog.title}
+                        </Link>
+                      </h3>
                     </div>
                   </div>
-                ))}
+                </div>
+              ))}
             </div>
           </div>
-          {/* <!--blog-items end--> */}
           <div className="footer-content">
             <div className="row">
               <div className="col-lg-4 col-md-6 col-sm-6">
@@ -91,31 +89,27 @@ const Footer = () => {
               <div className="col-lg-4 col-md-12">
                 <ul className="ft-links">
                   <li>
-                    <Link to="about" title="About us ">
+                    <Link to="/about" title="About us ">
                       About
                     </Link>
                   </li>
                   <li>
-                    <Link to="contact" title="contact us">
+                    <Link to="/contact" title="contact us">
                       Contact
                     </Link>
                   </li>
                 </ul>
-                {/* <!--ft-links end--> */}
               </div>
             </div>
           </div>
-          {/* <!--footer-content end--> */}
         </div>
       </footer>
-      {/* <!--footer end--> */}
 
       <section className="bottom-strip">
         <div className="container">
           <p>©2018 Heeney. All Rights Reserved.</p>
         </div>
       </section>
-      {/* <!--bottom-strip end--> */}
     </div>
   );
 };

@@ -16,14 +16,11 @@ const Contact = () => {
     response: data,
     error,
     sending,
-    status,
     saveData,
   } = usePost("/api/contact-us", item);
   const handleSubmit = (e) => {
     e.preventDefault();
     saveData();
-    console.log(sending);
-    console.log(status);
   };
   return (
     <section className="main-content">
