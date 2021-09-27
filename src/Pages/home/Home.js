@@ -1,7 +1,7 @@
-import Blogs from "./Blogs";
-import Featured from "./Featured";
-import Latest from "./Latest";
-import Recommended from "./Recommended";
+import Blogs from "./blogs/Blogs";
+import Featured from "./featured/Features";
+import Latest from "./latest/Latests";
+import Recommended from "./recommend/Recommended";
 const Home = () => {
   return (
     <div>

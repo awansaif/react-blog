@@ -25,7 +25,7 @@ const Weather = () => {
       })
       .catch((err) => {
         if (err.name === "AbortError") {
-          console.log("clear");
+          return;
         }
       });
     return () => AbortConst.abort();

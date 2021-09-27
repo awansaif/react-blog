@@ -22,7 +22,7 @@ const Subscribe = () => {
       .then((data) => {
         if (data.errors) {
           setprostatus(false);
-          setError(data.message);
+          setError(data.errors.email);
         } else {
           setprostatus(false);
           setMessage(data.message);
