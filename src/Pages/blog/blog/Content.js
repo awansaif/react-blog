@@ -59,7 +59,7 @@ const Content = ({ blog }) => {
             src={
               process.env.REACT_APP_API_STORAGE_URL +
               "/" +
-              blog.blog.profile?.avatar_path
+              blog.blog.editor.profile?.avatar_path
             }
             alt=""
           />
@@ -70,10 +70,10 @@ const Content = ({ blog }) => {
               {blog.blog.editor.name}
             </Link>
           </h3>
-          <p>{blog.blog.profile?.about_me}</p>
+          <p>{blog.blog.editor.profile?.about_me}</p>
           <ul className="social-links">
             <li>
-              <a href={blog.blog.profile?.website_link} title="">
+              <a href={blog.blog.editor.profile?.website_link} title="">
                 <i className="fas fa-website"></i>
                 Website
               </a>
