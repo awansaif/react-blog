@@ -1,15 +1,16 @@
 .editors {
     display: flex;
     flex-wrap: wrap;
+    gap: 1rem;
 }
 .editor-profile {
     width: 200px;
     height: 220px;
     position: relative;
-    margin: 1rem 1rem;
     border-radius: 5px;
-    box-shadow: 3px 9px 8px 0px #eae4e4bf;
+    box-shadow: 2px 5px 9px 0px #eae4e4bf;
     overflow: hidden;
+    border: 3px solid rgb(145 187 203 / 70%);
 }
 
 .editor-profile img{
@@ -19,7 +20,7 @@
 }
 .editor-name {
     position: absolute;
-    top: 0px;
+    bottom: 0px;
     background: #06060659;
     color: #fff;
     font-weight: 700;

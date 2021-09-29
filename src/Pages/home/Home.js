@@ -4,7 +4,7 @@ import Latest from "./latest/Latests";
 import Recommended from "./recommend/Recommended";
 const Home = () => {
   return (
-    <div>
+    <>
       <Latest />
 
       <Featured />
@@ -12,7 +12,7 @@ const Home = () => {
       <Blogs />
 
       <Recommended />
-    </div>
+    </>
   );
 };
 

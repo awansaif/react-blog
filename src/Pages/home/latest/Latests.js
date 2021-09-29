@@ -2,13 +2,12 @@ import { Link } from "react-router-dom";
 import useFetch from "../../../hooks/useFetch";
 
 const Latest = () => {
-  const { data: blogs, loading, error } = useFetch("/api/latest");
-  error && <h2>{error}</h2>;
+  const { data: blogs, loading } = useFetch("/api/latest");
 
   return (
     <section className="blog-section">
       <div className="container">
-        {loading && <h2>Loading</h2>}
+        {loading && <div className="loader"></div>}
         {blogs && (
           <div className="blog-items main">
             <div className="row">

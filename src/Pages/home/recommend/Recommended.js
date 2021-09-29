@@ -11,7 +11,7 @@ const Recommended = () => {
         </div>
         <div className="blog-items smaller-post">
           <div className="row">
-            {loading && <h2>Loding ....</h2>}
+            {loading && <div className="loader"></div>}
             {error && <h2>Error ....</h2>}
             {blogs?.map((blog, index) => (
               <Recommend blog={blog} key={index} />

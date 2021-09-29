@@ -11,7 +11,7 @@ const Blogs = () => {
         <div className="sec-title">
           <h3>Blogs </h3>
         </div>
-        {loading && <h1>Loading ....</h1>}
+        {loading && <div className="loader"></div>}
         {error && <h1>{error}</h1>}
         <div className="row">
           <div className="col-lg-8 mgr-50">

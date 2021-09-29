@@ -1,6 +1,7 @@
 .members {
     display: flex;
     flex-wrap: wrap;
+    gap: .6rem;
 }
 .member_image {
     width: 200px;
@@ -8,8 +9,9 @@
     overflow: hidden;
     object-fit: contain;
     position: relative;
-        margin: 2px;
-        border-radius: 10px;
+    margin: 2px;
+    border-radius: 10px;
+    border: 3px solid rgb(145 187 203 / 70%);
 }
 .member_image img {
     width: 100%;
@@ -17,17 +19,18 @@
     object-fit: cover;
 }
 .member_image p{
-        font-weight: 700;
-        font-size: 20px;
-        /* line-height: 22px; */
-        color: #83898a;
-        font-family: 'Lato';
-        position: absolute;
-        bottom: 0px;
-        /* left: 50px; */
-        /* transform: translateY(10px); */
-        background: #1a191e;
-        width: 100%;
-        color: #fff;
-        text-align: center;
+    font-weight: 700;
+    font-size: 20px;
+    color: #83898a;
+    font-family: 'Lato';
+    position: absolute;
+    bottom: -26px;
+    background: #1a191e9c;
+    width: 100%;
+    color: #fff;
+    text-align: center;
     }
+
+.member_image:hover img{
+    transform: scale(1.1);
+}

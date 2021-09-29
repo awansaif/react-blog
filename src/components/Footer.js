@@ -1,49 +1,14 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ProfileContext } from "../context/ProfileContext";
-import useFetch from "../hooks/useFetch";
 
 const Footer = () => {
   const { profile } = useContext(ProfileContext);
 
-  const { data: blogs, loading, error } = useFetch("/api/blogs");
-
   return (
-    <div>
+    <>
       <footer>
         <div className="container">
-          <div className="blog-items ft-style p-70">
-            <div className="row">
-              {loading && <h1>Loading</h1>}
-              {error && <h1>Error</h1>}
-              {blogs?.slice(0, 4).map((blog) => (
-                <div
-                  className="col-lg-3 col-md-3 col-sm-6 col-12"
-                  key={blog.id}
-                >
-                  <div className="blog-item">
-                    <div className="blog-img">
-                      <img
-                        src={
-                          process.env.REACT_APP_API_STORAGE_URL +
-                          "/" +
-                          blog.featured_image
-                        }
-                        alt=""
-                      />
-                    </div>
-                    <div className="blog-info">
-                      <h3 className="post-title">
-                        <Link to={"/blog/" + blog.slug} title={blog.title}>
-                          {blog.title}
-                        </Link>
-                      </h3>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
           <div className="footer-content">
             <div className="row">
               <div className="col-lg-4 col-md-6 col-sm-6">
@@ -110,7 +75,7 @@ const Footer = () => {
           <p>©2018 Heeney. All Rights Reserved.</p>
         </div>
       </section>
-    </div>
+    </>
   );
 };
 

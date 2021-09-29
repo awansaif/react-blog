@@ -11,9 +11,9 @@ const Editors = () => {
           <h3>Editors </h3>
         </div>
         <div className="row">
-          {loading && <h2 className="ml-2">Loading ...</h2>}
-          {error && <h2>Loading ...</h2>}
-          <div className="col-lg-8 mgr-50">
+          <div className="col-lg-12 mgr-50">
+            {loading && <div className="loader"></div>}
+            {error && <h2>Loading ...</h2>}
             <div className="editors">
               {editors?.map((editor, index) => (
                 <Editor editor={editor} key={index} />

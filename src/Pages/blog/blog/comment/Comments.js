@@ -107,7 +107,7 @@ const Comments = ({ slug }) => {
           <h3>Comments {comments && comments.length}</h3>
         </div>
         <ul className="comment-list">
-          {loading && <li>Loading .....</li>}
+          {loading && <div className="loader"></div>}
           {comments?.map((comment) => (
             <Comment loading={loading} comment={comment} key={comment.id} />
           ))}

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div>
+    <>
       <header>
         <div className="container">
           <div className="top-bar">
@@ -71,7 +71,7 @@ const Navbar = () => {
           </h2>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

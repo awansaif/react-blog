@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { ProfileContext } from "../../context/ProfileContext";
-import Team from "./team/Members";
 import Text from "./text/Text";
 
 const About = () => {
@@ -10,10 +9,7 @@ const About = () => {
       <div className="container">
         <div className="about-sec">
           <div className="row">
-            <div className="col-lg-5">
-              <Team />
-            </div>
-            <div className="col-lg-7">
+            <div className="col-lg-8 m-auto">
               <Text profile={profile} />
             </div>
           </div>

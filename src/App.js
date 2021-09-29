@@ -12,10 +12,12 @@ import Editors from "./pages/editors/editor/Editors";
 import EditorBlog from "./pages/editors/blogs/Blogs";
 import NotFound from "./pages/404";
 import Contact from "./pages/contact/Contact";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <ProfileContextProvider>
         <Navbar />
 

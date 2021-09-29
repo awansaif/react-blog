@@ -17,7 +17,7 @@ const Blog = () => {
   return (
     <section className="main-content p-80">
       <div className="container">
-        {loading && <h2>Loading ... </h2>}
+        {loading && <div className="loader"></div>}
         {error && <h2>{error.message}</h2>}
         {message && <h2>{message}</h2>}
         {blog && (

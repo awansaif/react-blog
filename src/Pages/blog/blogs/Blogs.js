@@ -10,7 +10,7 @@ const Blogs = () => {
           <h3>Blogs</h3>
         </div>
 
-        {loading && <h2>Loading .....</h2>}
+        {loading && <div className="loader"></div>}
         {error && <h2>Error .....</h2>}
         <div className="blog-items">
           <div className="row">

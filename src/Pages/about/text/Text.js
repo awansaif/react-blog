@@ -1,13 +1,15 @@
 import useFetch from "../../../hooks/useFetch";
+import Team from "../team/Members";
 
 const Text = ({ profile }) => {
   const { data: AboutText, loading } = useFetch("/api/about-us");
   return (
     <div className="about-cont">
       <h2>About Us</h2>
-      {loading && <li>Loading ....</li>}
+      {loading && <div className="loader"></div>}
       <div dangerouslySetInnerHTML={{ __html: AboutText?.about_text }} />
-      <div className="more-abt">
+      <Team />
+      <div className="more-abt m-auto">
         {profile && (
           <ul className="social-links">
             <li>

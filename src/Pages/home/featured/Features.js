@@ -9,7 +9,7 @@ const Featured = () => {
         <div className="sec-title">
           <h3>Featured Stories </h3>
         </div>
-        {loading && <h1>Loading ....</h1>}
+        {loading && <div className="loader"></div>}
         <div className="blog-items">
           <div className="row">
             {blogs?.map((blog, index) => (
