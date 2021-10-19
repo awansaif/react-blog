@@ -37,14 +37,14 @@ const Content = ({ blog }) => {
         />
       </div>
       <div
-        className="ck-content"
         style={{
           width: "100%",
+          overflow: "hidden",
           all: "reset",
         }}
       >
         <div
-          className="editor"
+          className=""
           dangerouslySetInnerHTML={{
             __html: blog.blog.body,
           }}

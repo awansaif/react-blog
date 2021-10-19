@@ -12,7 +12,7 @@ const Blogs = () => {
           <h3>{slug} Related Blogs</h3>
         </div>
 
-        {loading && <h2>Loading .....</h2>}
+        {loading && <div className="loader"></div>}
         {error && <h2>Error .....</h2>}
         {blogs && blogs.length === 0 && <h1>Blogs not Found</h1>}
         <div className="blog-items">

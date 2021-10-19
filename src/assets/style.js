@@ -1,4 +1,3 @@
-import "./css/ckeditor.css";
 import "./css/animate.css";
 import "./css/bootstrap.min.css";
 import "./css/line-awesome.min.css";
